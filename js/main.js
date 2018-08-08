@@ -5,6 +5,9 @@
 // parameter called `token` and should set `this.token` as a property of
 // the class.
 
+this.player1 = new player('remove-sign');
+this.player2 = new player('unchecked');
+
 
 // Tic Tac Toe Game Class
 class TicTacToe {
@@ -20,28 +23,50 @@ class TicTacToe {
         // progress.
 
         // TODO: Set `this.currentPlayer` equal to `null`
+        
+        this.currentPlayher = null;
 
         // TODO: Set `this.gameStatus` equal to `null`
+        
+        this.gameStatus = null;
 
         // TODO: Set `this.winner` equal to `null`
+        
+        this.winner = null;
 
         // TODO: Set `this.moveCount` equal to `0`
+        
+        this.moveCount = 0;
 
         // TODO: Set up DOM elements used in game as Class properties
 
         // TODO: Set `this.startPrompt` equal to the `#start-prompt` element
+        
+        this.startPrompt = document.querySelector('#start-prompt');
 
         // TODO: Set `this.movePrompt` equal to the `#move-prompt` element
+        
+        this.movePrompt = document.querySelector('#move-prompt');
 
         // TODO: Set `this.currentPlayerToken` equal to the `#player-token` element
+        
+        this.currentPlayerToken = document.querySelector('#player-token');
 
         // TODO: Set `this.gameboard` equal to the `#gameboard` element
+        
+        this.gameboard = document.querySelector('#gameboard');
 
         // TODO: Set `this.winScreen` equal to the `#win-screen` element
+        
+        this.winScreen = ('#win-screen');
 
         // TODO: Set `this.winnerToken` equal to the `#winner-token` element
+        
+        this.winnerToken = ('#winner-token');
 
         // TODO: Set `this.drawScreen` equal to the `#draw-screen` element
+        
+        this.drawScreen = ('#draw-screen');
 
         // Initialize an Array representing the starting state of the game board.
         // This is provided for you. We can access the spaces on the board using
