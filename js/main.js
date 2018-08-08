@@ -5,6 +5,12 @@
 // parameter called `token` and should set `this.token` as a property of
 // the class.
 
+class Player {
+    constructor(token){
+        this.token = token;   
+    }   
+}
+
 this.player1 = new player('remove-sign');
 this.player2 = new player('unchecked');
 
