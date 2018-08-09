@@ -11,8 +11,8 @@ class Player {
     }   
 }
 
-this.player1 = new player('remove-sign');
-this.player2 = new player('unchecked');
+this.player1 = new Player('remove-sign');
+this.player2 = new Player('unchecked');
 
 
 // Tic Tac Toe Game Class
@@ -30,7 +30,7 @@ class TicTacToe {
 
         // TODO: Set `this.currentPlayer` equal to `null`
         
-        this.currentPlayher = null;
+        this.currentPlayer = null;
 
         // TODO: Set `this.gameStatus` equal to `null`
         
@@ -262,7 +262,7 @@ class TicTacToe {
     start(){
         // This method handles the logic to create a new game. It primarily has
         // two duties in the basic version of the game:
-
+        console.log('starting game');
         // TODO: Create a new gameboard by calling `this.setUpBoard`
 
         // TODO: Initialize the move prompt by calling `this.initializeMovePrompt`.
@@ -277,22 +277,34 @@ class TicTacToe {
 // "DOMContentLoaded" event signal. This listener should execute an anonymous
 // function to handle the "DOMContentLoaded" event.
 
+let game;
+console.log('game code starting');
+document.addEventListener('DOMContentLoaded', function(event){
+    
     // TODO: Inside the "DOMContentLoaded" event handler, perform the following
     // steps:
-
+    console.log('Dom content loading');
     // TODO: Select the `#start-button` element from the DOM and save it as a
     // variable called `startButton`.
-
+    let startButton = document.querySelector('#start-button');
+    
     // TODO: Create an event listener on the `startButton` element that listens for
-    // a "click" event and executes an anonymous function to start the game.
-
-        // TODO: Inside the `startButton` event listener, instantiate a new
-        // instance of the `TicTacToe` class and save it as a variable called
-        // `game`.
-
-        // TODO: Call the `start()` method of the `game` object you just created.
+    // a "click" event and executes an anonymous function to start the game.   
+    
+    startButton.addEventListener('click', function(event){
+        
+    // TODO: Inside the `startButton` event listener, instantiate a new
+    // instance of the `TicTacToe` class and save it as a variable called
+    // `game`.    
+    game = new TicTacToe();    
+    
+    // TODO: Call the `start()` method of the `game` object you just created.   
+    game.start();
+    });
 
     // NOTE: End of the `startButton` event listener here.
+});
+
 
 // NOTE: End of the "DOMContentLoaded" event listener here.
 
