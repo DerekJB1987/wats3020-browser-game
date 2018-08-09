@@ -201,6 +201,7 @@ class TicTacToe {
         // to "show".
     }
     setUpBoard(){
+        console.log('setting up gameboard');
         // TODO: Clear all content from the existing `this.gameboard` element.
 
         // We must draw the game board by using a loop to create rows with
@@ -249,6 +250,7 @@ class TicTacToe {
     }
     initializeMovePrompt(){
         // This method initializes the `this.movePrompt` element.
+console.log('initialize move prompt');
 
         // TODO: Hide the `this.startPrompt` element by setting the `class`
         // attribute to "hidden".
@@ -260,12 +262,15 @@ class TicTacToe {
         // TODO: Set `this.currentPlayerToken` class equal to `glyphicon glyphicon-${this.currentPlayer.token}`
     }
     start(){
+            console.log('starting game');
         // This method handles the logic to create a new game. It primarily has
         // two duties in the basic version of the game:
-        console.log('starting game');
+
         // TODO: Create a new gameboard by calling `this.setUpBoard`
+        this.setUpBoard();
 
         // TODO: Initialize the move prompt by calling `this.initializeMovePrompt`.
+        this.initializeMovePrompt();
 
     }
 } // End of the Tic Tac Toe Class definition.
@@ -279,6 +284,7 @@ class TicTacToe {
 
 let game;
 console.log('game code starting');
+
 document.addEventListener('DOMContentLoaded', function(event){
     
     // TODO: Inside the "DOMContentLoaded" event handler, perform the following
