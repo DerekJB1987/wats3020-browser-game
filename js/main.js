@@ -105,6 +105,7 @@ class TicTacToe {
     // This `checkForWinner()` method is provided for you, but you must fill in
     // the event dispatch lines that cause the end game screens to show.
     checkForWinner(){
+        console.log('checking for winner.');
         for (let condition of this.winStates){
             let winningCondition = true;
             for (let position of condition){
@@ -140,7 +141,7 @@ class TicTacToe {
         }
     }
 
-    recordMove(event){
+    recordMove(event)
         // This method handles recording a move in the `this.gameState` property.
         // To record a move, we must accmoplish the following:
 
@@ -158,6 +159,7 @@ class TicTacToe {
         // should be: `tile played glyphicon glyphicon-${this.currentPlayer.token}`.
     }
     switchPlayer(){
+        console.log('swtiching player.');
         // This method handles switching between players after each move.
         // It must determine who the current player is, and then switch to the
         // other player. After that, it must set the class on the
@@ -182,9 +184,14 @@ class TicTacToe {
 
         // TODO: Select all of the `.tile` elements into a variable called
         // `tileElements`.
+        
+        let tileElements = document.querySelectorAll('.tile');
 
         // TODO: Use a loop to add a "click" event listener to each tile that
         // will call the `handleMove` function whenever a tile is clicked.
+        
+        for (let tile of tileElements){
+            tile.addEventListener('click', handleMove);
     }
     showWinScreen(){
         // This method displays the end game screen for a Win.
@@ -288,10 +295,16 @@ class TicTacToe {
 
         // TODO: Hide the `this.startPrompt` element by setting the `class`
         // attribute to "hidden".
+        
+        this.startPrompt.setAttribute('class', 'hidden');
 
         // TODO: Remove the "hidden" class from the `this.movePrompt` element.
+        
+        this.movePrompt.setAttribute('class', '');
 
         // TODO: Set `this.currentPlayer` equal to `this.player1`.
+        
+        this.currentPlayer = this.player1;
         
         // TODO: Set `this.currentPlayerToken` class equal to `glyphicon glyphicon-${this.currentPlayer.token}`
     }
@@ -348,6 +361,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
 // External function for event listeners provided for you.
 function handleMove(event){
+    console.log('handling player move.');
     // Record the move for the current player.
     game.recordMove(event);
 
