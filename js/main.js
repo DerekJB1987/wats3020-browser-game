@@ -141,7 +141,7 @@ class TicTacToe {
         }
     }
 
-    recordMove(event)
+    recordMove(event){
         // This method handles recording a move in the `this.gameState` property.
         // To record a move, we must accmoplish the following:
 
@@ -156,7 +156,8 @@ class TicTacToe {
         // TODO: Claim this spot in the `this.gameState` array for the player.
 
         // TODO: Set the class on the `event.target` to show the player's token. The class
-        // should be: `tile played glyphicon glyphicon-${this.currentPlayer.token}`.
+        // should be: `tile played glyphicon glyphicon-${this.currentPlayer.token}`.      
+    }
     switchPlayer(){
         console.log('switching player.');
         // This method handles switching between players after each move.
@@ -199,8 +200,8 @@ class TicTacToe {
         // to "show".
 
         // TODO: Change the `class` attribute on the `this.winnerToken` property
-        // to show the proper winner's token.
-    }
+        // to show the proper winner's token.               
+    }             
     showDrawScreen(){
         // This method displays the end game screen for a Draw.
 
@@ -291,17 +292,10 @@ class TicTacToe {
     initializeMovePrompt(){
         // This method initializes the `this.movePrompt` element.
         console.log('initialize move prompt.');
-
-        // TODO: Hide the `this.startPrompt` element by setting the `class`
-        // attribute to "hidden".
         
         this.startPrompt.setAttribute('class', 'hidden');
-
-        // TODO: Remove the "hidden" class from the `this.movePrompt` element.
         
         this.movePrompt.setAttribute('class', '');
-
-        // TODO: Set `this.currentPlayer` equal to `this.player1`.
         
         this.currentPlayer = this.player1;
         
@@ -315,7 +309,6 @@ class TicTacToe {
         this.setUpBoard();
 
         this.initializeMovePrompt();
-
     }
 } // End of the Tic Tac Toe Class definition.
 
