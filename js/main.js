@@ -208,87 +208,46 @@ class TicTacToe {
         // TODO: Set the `class` attribute on the `this.drawScreen` property
         // to "show".
     }
-    setUpBoard(){
-        
+    setUpBoard(){  
         console.log('setting up gameboard.');
-        // TODO: Clear all content from the existing `this.gameboard` element.
+        
         this.gameboard.innerHTML = '';
 
         // We must draw the game board by using a loop to create rows with
-        // tiles in them. We want to create the same structure as we see in the
-        // index.html file.
-
-        // TODO: Create a `for` loop that will loop three times. The counter
-        // variable in this loop should be called `i`.
+        // tiles in them.  Create a `for` loop that will loop three times.
+        // The counter variable in this loop should be called `i`.
         
         for (let i=0; i<3; i++){
             
-         // TODO: Create a new div element called `newRow
             let newRow = document.createElement('div');
-
-         // TODO: Set the `class` attribute on `newRow` to "row".   
          
             newRow.setAttribute = ('class', 'row');
-         
-           // TODO: Create another `for` loop to make the colums to contain the
-            // tiles. This `for` loop should also loop 3 times. The counter
-            // variable in this loop should be called `j`.
             
         for (let j=0; j<3; j++){
             
-                // TODO: Create a new `div` element called `newCol`.
                 
             let newCol = document.createElement('div');
                 
-
-                // TODO: Set the `class` attribute on `newCol` to "col-xs-3".
-                
                 newCol.setAttribute('class', "col-xs-3");
-
-                // TODO: Create a new `span` element called `newTile`.
                 
             let newTile = document.createElement('span');
-
-                // TODO: Set the `class` attribute on `newTile` to equal the
-                // placeholder styles ("tile glyphicon glyphicon-question-sign").
                 
                 newTile.setAttribute('class', 'tile glyphicon glyphicon-question-sign');
-            
-
-                // TODO: Set the `data-x` attribute on the `newTile` element
-                // equal to `i`.
                 
                 newTile.dataset.x = i;
-
-                // TODO: Set the `data-y` attribute on the `newTile` element
-                // equal to `j`.
                 
                 newTile.dataset.y = j;
-
-
-                // TODO: Append `newTile` as a child to `newCol`. 
                 
                 newCol.appendChild(newTile);
-            
-                // TODO: Append `newCol` as a child to `newRow`.
                 
-                newRow.appendChild(newCol);
-                
-        }// NOTE: Your second `for` loop should end here.         
-         
-                // TODO: Append the `newRow` element to `this.gameboard` as a child element.
-                
-                this.gameboard.appendChild(newRow);
-                  
-         
-        }// NOTE: Your first `for` loop should end here.
-
-        // TODO: Call `this.setUpTileListeners()` to add event listeners to the
-        // `.tile` elements.
+                newRow.appendChild(newCol);                
+            }     
+                this.gameboard.appendChild(newRow);                     
+        }
         
         this.setUpTileListeners();
-
     }
+    
     initializeMovePrompt(){
         // This method initializes the `this.movePrompt` element.
         console.log('initialize move prompt.');
@@ -297,10 +256,9 @@ class TicTacToe {
         
         this.movePrompt.setAttribute('class', '');
         
-        this.currentPlayer = this.player1;
-        
-        // TODO: Set `this.currentPlayerToken` class equal to `glyphicon glyphicon-${this.currentPlayer.token}`
+        this.currentPlayerToken = `glyphicon glyphicon-${this.currentPlyaer.token}`;
     }
+    
         // This method handles the logic to create a new game.
     start(){
         
