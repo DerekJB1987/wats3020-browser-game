@@ -157,9 +157,8 @@ class TicTacToe {
 
         // TODO: Set the class on the `event.target` to show the player's token. The class
         // should be: `tile played glyphicon glyphicon-${this.currentPlayer.token}`.
-    }
     switchPlayer(){
-        console.log('swtiching player.');
+        console.log('switching player.');
         // This method handles switching between players after each move.
         // It must determine who the current player is, and then switch to the
         // other player. After that, it must set the class on the
