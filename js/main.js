@@ -5,6 +5,7 @@
 // parameter called `token` and should set `this.token` as a property of
 // the class.
 
+/*eslint-disable no-extra-semi */
 class Player {
     constructor(token){
         this.token = token;   
@@ -94,7 +95,7 @@ class TicTacToe {
             }
         }
         this.moveCount++;
-        console.log(`Reviewed move ${this.moveCount}.`)
+        console.log(`Reviewed move ${this.moveCount}.`);
         if (this.moveCount >= 9) {
             console.log(`This game is a draw at ${this.moveCount} moves.`);
             this.gameStatus = 'draw';
@@ -210,8 +211,11 @@ class TicTacToe {
         
         this.movePrompt.setAttribute('class', '');
         
+        this.currentPlayer = this.player1;
+        
         this.currentPlayerToken.setAttribute('class', `glyphicon glyphicon-${this.currentPlayer.token}`);
-    
+    }
+
         // This method handles the logic to create a new game.
     start(){
         
@@ -221,7 +225,7 @@ class TicTacToe {
 
         this.initializeMovePrompt();
     }
-} // End of the Tic Tac Toe Class definition.
+}// End of the Tic Tac Toe Class definition.
 
 
 //  Add an event listener to the `document` object that will watch for the
@@ -248,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 document.addEventListener('win', function(event){
     console.log('show win event');
     game.showWinScreen();
-}
+});
 
 // NOTE: End of the "win" event listener.
 
@@ -270,4 +274,4 @@ function handleMove(event){
 
     // Rotate players.
     game.switchPlayer();
-}
+};
