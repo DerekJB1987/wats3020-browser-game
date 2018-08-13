@@ -18,11 +18,6 @@ this.player2 = new Player('unchecked');
 // Tic Tac Toe Game Class
 class TicTacToe {
     constructor(){
-        // TODO: Set up `this.player1` and `this.player2` properties.
-        // These properties should be new Player class instances.
-        // You may set the "token" to anything that corresponds to a Glyphicon
-        // icon name ('heart', 'star', 'remove-sign', 'unchecked', 'bell',
-        // 'certificate', etc.)
         
         this.currentPlayer = null;
         
@@ -40,11 +35,11 @@ class TicTacToe {
         
         this.gameboard = document.querySelector('#gameboard');
         
-        this.winScreen = ('#win-screen');
+        this.winScreen = document.querySelector('#win-screen');
         
-        this.winnerToken = ('#winner-token');
+        this.winnerToken = document.querySelector('#winner-token');
         
-        this.drawScreen = ('#draw-screen');
+        this.drawScreen = document.querySelector('#draw-screen');
 
         // Initialize an Array representing the starting state of the game board.
         // This is provided for you. We can access the spaces on the board using
@@ -95,7 +90,6 @@ class TicTacToe {
                 // dispatch it.
                 
                 let winEvent = new Event('win');
-                
                 document.dispatchEvent(winEvent);
             }
         }
@@ -106,7 +100,6 @@ class TicTacToe {
             this.gameStatus = 'draw';
             
             let drawEvent = new Event('draw');
-            
             document.dispatchEvent(drawEvent);
         }
     }
@@ -134,10 +127,10 @@ class TicTacToe {
         // It must determine who the current player is, and then switch to the
         // other player.
         
-        if (this.CurrentPlayer === this.Player1) {
-                this.CurrentPlayer1 = this.Player2;
+        if (this.currentPlayer === this.player1) {
+                this.currentPlayer1 = this.player2;
             } else {
-                this.currentPlayer = this.Player1;
+                this.currentPlayer = this.player1;
             }
             
         this.currentPlayerToken.setAttribute('class', `glyphicon glyphicon-${this.currentPlayer.token}`);
@@ -153,9 +146,10 @@ class TicTacToe {
         for (let tile of tileElements){
             tile.addEventListener('click', handleMove);
     }
+}
     showWinScreen(){
         // This method displays the end game screen for a Win.
-        console.log('showing win scree');
+        console.log('showing win screen');
         
         this.winScreen.setAttribute('class', 'show'); 
         
