@@ -12,13 +12,13 @@ class Player {
     }   
 }
 
-this.player1 = new Player('remove-sign');
-this.player2 = new Player('unchecked');
-
-
 // Tic Tac Toe Game Class
 class TicTacToe {
     constructor(){
+        
+        this.player1 = new Player('remove-sign');
+        
+        this.player2 = new Player('unchecked');
         
         this.currentPlayer = null;
         
@@ -70,6 +70,7 @@ class TicTacToe {
         ];
     }
 
+
     // This `checkForWinner()` method is provided for you, but you must fill in
     // the event dispatch lines that cause the end game screens to show.
     checkForWinner(){
@@ -117,7 +118,7 @@ class TicTacToe {
         
         let tileY = event.target.dataset.y;
         
-        this.gateState[tileX][tileY] = this.currentPlayer.token;
+        this.gameState[tileX][tileY] = this.currentPlayer.token;
         
         event.target.setAttribute('class', `tile played glyphicon glyphicon-${this.currentPlayer.token}`);
         
@@ -129,7 +130,7 @@ class TicTacToe {
         // other player.
         
         if (this.currentPlayer === this.player1) {
-                this.currentPlayer1 = this.player2;
+                this.currentPlayer = this.player2;
             } else {
                 this.currentPlayer = this.player1;
             }
@@ -146,8 +147,8 @@ class TicTacToe {
         
         for (let tile of tileElements){
             tile.addEventListener('click', handleMove);
+        }
     }
-}
     showWinScreen(){
         // This method displays the end game screen for a Win.
         console.log('showing win screen');
@@ -259,6 +260,7 @@ document.addEventListener('win', function(event){
 document.addEventListener('draw', function(event){
     console.log('show draw event');
     game.showDrawScreen();
+});
 
 
 // NOTE: End of the "draw" event listener.
